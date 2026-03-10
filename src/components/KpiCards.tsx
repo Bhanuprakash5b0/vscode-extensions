@@ -9,16 +9,16 @@ interface KpiCardProps {
 }
 
 const KpiCard = ({ title, value, subtitle, icon }: KpiCardProps) => (
-  <Card className="border border-border bg-card shadow-sm">
+  <Card className="border border-kpi-border bg-card shadow-kpi hover:shadow-card-hover transition-shadow duration-200">
     <CardContent className="p-5">
       <div className="flex items-center justify-between mb-3">
         <span className="text-sm font-medium text-muted-foreground">{title}</span>
-        <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center text-primary">
+        <div className="h-9 w-9 rounded-lg bg-kpi-icon-bg flex items-center justify-center text-primary">
           {icon}
         </div>
       </div>
-      <p className="text-2xl font-bold text-card-foreground">{value}</p>
-      <p className="text-xs text-muted-foreground mt-1">{subtitle}</p>
+      <p className="text-2xl font-bold text-card-foreground tracking-tight">{value}</p>
+      <p className="text-xs text-muted-foreground mt-1.5">{subtitle}</p>
     </CardContent>
   </Card>
 );
