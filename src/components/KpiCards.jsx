@@ -1,14 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card.jsx";
 import { Download, Package, Users, TrendingUp } from "lucide-react";
 
-interface KpiCardProps {
-  title: string;
-  value: string;
-  subtitle: string;
-  icon: React.ReactNode;
-}
-
-const KpiCard = ({ title, value, subtitle, icon }: KpiCardProps) => (
+const KpiCard = ({ title, value, subtitle, icon }) => (
   <Card className="border border-kpi-border bg-card shadow-kpi hover:shadow-card-hover transition-shadow duration-200">
     <CardContent className="p-5">
       <div className="flex items-center justify-between mb-3">
@@ -24,7 +17,7 @@ const KpiCard = ({ title, value, subtitle, icon }: KpiCardProps) => (
 );
 
 const KpiCards = () => {
-  const kpis: KpiCardProps[] = [
+  const kpis = [
     {
       title: "Total Downloads",
       value: "1.46B+",

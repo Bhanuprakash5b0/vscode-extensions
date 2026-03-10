@@ -1,5 +1,5 @@
-import KpiCards from "@/components/KpiCards";
-import ToggleChartCard from "@/components/ToggleChartCard";
+import KpiCards from "@/components/KpiCards.jsx";
+import ToggleChartCard from "@/components/ToggleChartCard.jsx";
 import {
   TopExtensionsChart,
   TrendChart,
@@ -8,7 +8,7 @@ import {
   AiVsNonAiChart,
   HighestReviewsChart,
   DownloadsVsReviewsChart,
-} from "@/components/Charts";
+} from "@/components/Charts.jsx";
 
 const Index = () => {
   return (
@@ -23,7 +23,6 @@ const Index = () => {
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
         <KpiCards />
 
-        {/* Always visible */}
         <ToggleChartCard title="Distribution of VS Code Extensions by Category" alwaysVisible>
           <CategoryDistributionChart />
         </ToggleChartCard>

@@ -1,16 +1,9 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.jsx";
+import { Button } from "@/components/ui/button.jsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-interface ToggleChartCardProps {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean;
-  alwaysVisible?: boolean;
-}
-
-const ToggleChartCard = ({ title, children, defaultOpen = false, alwaysVisible = false }: ToggleChartCardProps) => {
+const ToggleChartCard = ({ title, children, defaultOpen = false, alwaysVisible = false }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen || alwaysVisible);
 
   return (

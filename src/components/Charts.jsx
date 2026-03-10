@@ -11,18 +11,17 @@ const PALETTES = {
   forest: ["#10b981", "#34d399", "#6ee7b7", "#059669", "#047857", "#a7f3d0", "#065f46", "#d1fae5", "#14b8a6", "#2dd4bf"],
   berry: ["#8b5cf6", "#a78bfa", "#c4b5fd", "#7c3aed", "#6d28d9", "#ddd6fe", "#5b21b6", "#ede9fe", "#a855f7", "#c084fc"],
   coral: ["#f43f5e", "#fb7185", "#fda4af", "#e11d48", "#be123c", "#fecdd3", "#9f1239", "#ffe4e6", "#ef4444", "#f87171"],
-  slate: ["#64748b", "#94a3b8", "#cbd5e1", "#475569", "#334155", "#e2e8f0", "#1e293b", "#f1f5f9", "#78716c", "#a8a29e"],
   teal: ["#14b8a6", "#2dd4bf", "#5eead4", "#0d9488", "#0f766e", "#99f6e4", "#115e59", "#ccfbf1", "#06b6d4", "#22d3ee"],
 };
 
-const formatDownloads = (value: number) => {
+const formatDownloads = (value) => {
   if (value >= 1e9) return `${(value / 1e9).toFixed(1)}B`;
   if (value >= 1e6) return `${(value / 1e6).toFixed(0)}M`;
   if (value >= 1e3) return `${(value / 1e3).toFixed(0)}K`;
   return value.toString();
 };
 
-const tooltipStyle = (bg: string, border: string) => ({
+const tooltipStyle = (bg, border) => ({
   backgroundColor: bg,
   border: `1px solid ${border}`,
   borderRadius: "8px",
@@ -30,7 +29,6 @@ const tooltipStyle = (bg: string, border: string) => ({
   fontSize: "12px",
 });
 
-// ---- Top Extensions by Downloads (Ocean Blue) ----
 const topExtensionsData = [
   { name: "Python", downloads: 191868922 },
   { name: "Pylance", downloads: 159723850 },
@@ -50,7 +48,7 @@ export const TopExtensionsChart = () => (
       <CartesianGrid strokeDasharray="3 3" stroke={GRID_COLOR} />
       <XAxis type="number" tickFormatter={formatDownloads} fontSize={12} stroke="#64748b" />
       <YAxis type="category" dataKey="name" fontSize={11} width={95} stroke="#64748b" />
-      <Tooltip formatter={(value: number) => [formatDownloads(value), "Downloads"]} contentStyle={tooltipStyle("#f0f9ff", "#bae6fd")} />
+      <Tooltip formatter={(value) => [formatDownloads(value), "Downloads"]} contentStyle={tooltipStyle("#f0f9ff", "#bae6fd")} />
       <Bar dataKey="downloads" radius={[0, 6, 6, 0]}>
         {topExtensionsData.map((_, i) => (
           <Cell key={i} fill={PALETTES.ocean[i % PALETTES.ocean.length]} />
@@ -60,7 +58,6 @@ export const TopExtensionsChart = () => (
   </ResponsiveContainer>
 );
 
-// ---- Trend of Extension Releases (Sunset Orange) ----
 const trendData = [
   { year: 2015, count: 259 },
   { year: 2016, count: 814 },
@@ -93,7 +90,6 @@ export const TrendChart = () => (
   </ResponsiveContainer>
 );
 
-// ---- Distribution by Category (Forest Green) ----
 const categoryData = [
   { name: "Programming Languages", value: 3200 },
   { name: "Snippets", value: 1800 },
@@ -125,7 +121,6 @@ export const CategoryDistributionChart = () => (
   </ResponsiveContainer>
 );
 
-// ---- Top Publishers (Berry Purple Donut) ----
 const publisherData = [
   { name: "Microsoft", downloads: 1069993609 },
   { name: "Ritwick Dey", downloads: 70873297 },
@@ -141,13 +136,12 @@ export const TopPublishersChart = () => (
           <Cell key={i} fill={PALETTES.berry[i]} />
         ))}
       </Pie>
-      <Tooltip formatter={(value: number) => [formatDownloads(value), "Downloads"]} contentStyle={tooltipStyle("#faf5ff", "#ddd6fe")} />
+      <Tooltip formatter={(value) => [formatDownloads(value), "Downloads"]} contentStyle={tooltipStyle("#faf5ff", "#ddd6fe")} />
       <Legend />
     </PieChart>
   </ResponsiveContainer>
 );
 
-// ---- AI vs Non-AI (Coral Red Donut) ----
 const aiData = [
   { name: "Non-AI", value: 8200 },
   { name: "AI-Powered", value: 1338 },
@@ -166,7 +160,6 @@ export const AiVsNonAiChart = () => (
   </ResponsiveContainer>
 );
 
-// ---- Highest Reviews (Teal) ----
 const reviewData = [
   { name: "Python", reviews: 1250 },
   { name: "C/C++", reviews: 980 },
@@ -194,7 +187,6 @@ export const HighestReviewsChart = () => (
   </ResponsiveContainer>
 );
 
-// ---- Downloads vs Reviews (Slate + Sunset dual) ----
 const scatterData = [
   { name: "Python", downloads: 191, reviews: 1250 },
   { name: "Pylance", downloads: 159, reviews: 650 },
