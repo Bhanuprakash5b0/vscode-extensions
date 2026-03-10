@@ -14,23 +14,23 @@ const ToggleChartCard = ({ title, children, defaultOpen = false, alwaysVisible =
   const [isOpen, setIsOpen] = useState(defaultOpen || alwaysVisible);
 
   return (
-    <Card className="border border-border bg-card shadow-sm">
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+    <Card className="border border-kpi-border bg-card shadow-card hover:shadow-card-hover transition-all duration-200 animate-fade-in">
+      <CardHeader className="flex flex-row items-center justify-between pb-2 px-5 pt-4">
         <CardTitle className="text-base font-semibold text-card-foreground">{title}</CardTitle>
         {!alwaysVisible && (
           <Button
-            variant="ghost"
+            variant="outline"
             size="sm"
             onClick={() => setIsOpen(!isOpen)}
-            className="text-muted-foreground hover:text-foreground"
+            className="border-kpi-border bg-kpi-bg text-muted-foreground hover:bg-toggle-hover hover:text-foreground transition-colors text-xs px-3"
           >
-            {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-            <span className="ml-1 text-xs">{isOpen ? "Hide" : "Show"}</span>
+            {isOpen ? <ChevronUp className="h-3.5 w-3.5 mr-1" /> : <ChevronDown className="h-3.5 w-3.5 mr-1" />}
+            {isOpen ? "Hide" : "Show"}
           </Button>
         )}
       </CardHeader>
       {isOpen && (
-        <CardContent className="pt-0">
+        <CardContent className="pt-0 px-5 pb-5 animate-fade-in">
           {children}
         </CardContent>
       )}

@@ -52,11 +52,26 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "chart-blue": "hsl(var(--chart-blue))",
-        "chart-red": "hsl(var(--chart-red))",
-        "chart-green": "hsl(var(--chart-green))",
-        "chart-purple": "hsl(var(--chart-purple))",
-        "chart-orange": "hsl(var(--chart-orange))",
+        "chart-blue-light": "hsl(var(--chart-blue-light))",
+        "chart-blue-dark": "hsl(var(--chart-blue-dark))",
+        "chart-sky": "hsl(var(--chart-sky))",
+        "chart-teal": "hsl(var(--chart-teal))",
+        "chart-indigo": "hsl(var(--chart-indigo))",
+        "chart-slate": "hsl(var(--chart-slate))",
         "chart-cyan": "hsl(var(--chart-cyan))",
+        kpi: {
+          bg: "hsl(var(--kpi-bg))",
+          "icon-bg": "hsl(var(--kpi-icon-bg))",
+          border: "hsl(var(--kpi-border))",
+        },
+        header: {
+          bg: "hsl(var(--header-bg))",
+          border: "hsl(var(--header-border))",
+        },
+        toggle: {
+          active: "hsl(var(--toggle-active))",
+          hover: "hsl(var(--toggle-hover))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -73,27 +88,30 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        card: "0 1px 3px 0 rgba(148, 180, 214, 0.15), 0 1px 2px -1px rgba(148, 180, 214, 0.1)",
+        "card-hover": "0 4px 12px 0 rgba(148, 180, 214, 0.2), 0 2px 4px -1px rgba(148, 180, 214, 0.1)",
+        kpi: "0 2px 8px 0 rgba(130, 170, 220, 0.12)",
+        header: "0 1px 4px 0 rgba(148, 180, 214, 0.1)",
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },

@@ -13,9 +13,11 @@ import {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card px-6 py-4">
-        <h1 className="text-xl font-bold text-foreground">VS Code Extensions Analytics</h1>
-        <p className="text-sm text-muted-foreground">Insights from the VS Code Marketplace dataset</p>
+      <header className="border-b border-header-border bg-header-bg px-6 py-5 shadow-header">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-xl font-bold text-foreground tracking-tight">📊 VS Code Extensions Analytics</h1>
+          <p className="text-sm text-muted-foreground mt-0.5">Insights from the VS Code Marketplace dataset</p>
+        </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
