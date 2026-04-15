@@ -81,14 +81,14 @@ Copy everything inside your project's dist/ folder into the cloned Space folder
 
 **Step 5 — Add a README with Space metadata**
 Create or replace the README.md in the Space folder with the following at the very top:
----
+/---
 title: Top VS Code Extensions
 emoji: 🧩
 colorFrom: blue
 colorTo: purple
 sdk: static
 pinned: false
----
+/---
 
 **Step 6 — Push to Hugging Face**
 git add .
