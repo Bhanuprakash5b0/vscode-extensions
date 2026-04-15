@@ -61,17 +61,20 @@ Prerequisites
 Hugging Face account at huggingface.co
 Git installed on your machine
 Node.js installed to build the project
+
 **Step 1 — Build the project**
 Run the production build inside your project folder:
 npm run build
 
 This creates a dist/ folder containing the compiled static files.
+
 **Step 2 — Create a new Space**
 Go to huggingface.co/new-space
 Give it a name (e.g. Vs-code-ext)
 Under Space SDK, select Static
 Set visibility to Public
 Click Create Space
+
 **Step 3 — Clone the Space repository**
 git clone https://huggingface.co/spaces/UserName/Space-Name
 cd Vs-code-ext
